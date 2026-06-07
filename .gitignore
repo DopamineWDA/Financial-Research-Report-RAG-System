@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets and local env
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# Local data and generated artifacts
+data/
+data_parsed/
+data_chunked/
+indexes/
+
+# Streamlit / cache
+.streamlit/
+
+# Build / temp
+tmp/
+temp/
+*.log
+
+# Large model artifacts
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.msgpack
+*.npy

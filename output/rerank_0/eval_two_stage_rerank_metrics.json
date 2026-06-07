@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-05-29T15:32:13",
+  "eval_path": "/home/txs/work/zyp/RAG/eval/recall_eval.json",
+  "index_dir": "/home/txs/work/zyp/RAG/indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5",
+  "rerank_model_path": "BAAI/bge-reranker-v2-m3",
+  "metric_definitions": {
+    "Recall@10": {
+      "type": "strict_recall",
+      "description": "Top-10 results must jointly cover all gold evidence pairs (doc_id, block_id) for a query.",
+      "formula": "Recall@10(query) = 1 if gold_pairs ⊆ retrieved_pairs@10 else 0; final score is the mean over all queries."
+    },
+    "MRR@10": {
+      "type": "mean_reciprocal_rank",
+      "description": "Use the rank of the first retrieved chunk in top-10 that matches any gold evidence pair.",
+      "formula": "RR@10(query) = 1 / rank_first_hit if a hit exists in top-10 else 0; MRR@10 is the mean RR@10 over all queries."
+    },
+    "NDCG@10": {
+      "type": "normalized_discounted_cumulative_gain",
+      "description": "Each retrieved chunk gets graded relevance equal to the number of matched gold evidence pairs it covers.",
+      "formula": "DCG@10 = Σ(gain_i / log2(i+1)); NDCG@10 = DCG@10 / IDCG@10. If no retrieved hit matches any gold pair, score is 0."
+    }
+  },
+  "metrics": [
+    {
+      "route": "hybrid_weightsum",
+      "Recall@10": 0.456,
+      "MRR@10": 0.35644126984126995,
+      "NDCG@10": 0.4035759349071211,
+      "query_count": 125
+    },
+    {
+      "route": "hybrid_rrf",
+      "Recall@10": 0.44,
+      "MRR@10": 0.34845396825396835,
+      "NDCG@10": 0.393982397471616,
+      "query_count": 125
+    }
+  ],
+  "route_outputs": {
+    "hybrid_weightsum": "/home/txs/work/zyp/RAG/output/json/eval_hybrid_weightsum__rerank_on__20260529_150215.json",
+    "hybrid_rrf": "/home/txs/work/zyp/RAG/output/json/eval_hybrid_rrf__rerank_on__20260529_150215.json"
+  },
+  "note": "RAG/eval/recall_eval.json was used as input only and was not overwritten."
+}

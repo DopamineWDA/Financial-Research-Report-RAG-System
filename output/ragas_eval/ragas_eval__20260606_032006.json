@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-06-06T03:20:06",
+  "input_json": "RAG/output/ragas_answers/eval_hybrid_weightsum__rerank_on__qd_on__20260601_233756__qwen3-8b__20260603_211622/answers.json",
+  "evaluator_model": "qwen-plus",
+  "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "judge_preset": "qwen-plus",
+  "judge_mode": "remote_openai_compatible",
+  "embedding_model_path": "/home/txs/.cache/huggingface/hub/models--BAAI--bge-large-zh-v1.5",
+  "metrics": [
+    "faithfulness",
+    "answer_relevancy",
+    "context_precision",
+    "context_recall"
+  ],
+  "answer_relevancy_strictness": 1,
+  "checkpoint_path": "/home/txs/work/zyp/RAG/output/ragas_eval/ragas_eval_checkpoint__answers__qwen-plus__faithfulness-answer_relevancy-context_precision-context_recall__adapter-auto__judge-qwen-plus.jsonl",
+  "completed_records": 125,
+  "requested_records": 125,
+  "metric_notes": {
+    "faithfulness": "Higher is better.",
+    "answer_relevancy": "Higher is better.",
+    "context_precision": "Higher is better.",
+    "context_recall": "Higher is better.",
+    "noise_sensitivity": "Lower is better."
+  },
+  "overall": {
+    "faithfulness": 0.8267989417989414,
+    "answer_relevancy": 0.8801877169069386,
+    "context_precision": 0.6138556524434041,
+    "context_recall": 0.8736559139784945
+  },
+  "by_type": {
+    "fact": {
+      "faithfulness": 0.9074864498644987,
+      "answer_relevancy": 0.9229340478590061,
+      "context_precision": 0.9044671876207053,
+      "context_recall": 1.0
+    },
+    "compare": {
+      "faithfulness": 0.58,
+      "answer_relevancy": 0.8277162180589016,
+      "context_precision": 0.0,
+      "context_recall": 0.7666666666666667
+    },
+    "summary": {
+      "faithfulness": 0.26666666666666666,
+      "answer_relevancy": 0.7509873092086886,
+      "context_precision": 0.007142857142142857,
+      "context_recall": 0.45
+    }
+  }
+}

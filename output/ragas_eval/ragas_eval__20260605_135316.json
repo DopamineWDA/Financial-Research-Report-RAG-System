@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-05T13:53:16",
+  "input_json": "RAG/output/ragas_answers/eval_hybrid_weightsum__rerank_on__qd_on__20260601_233756__qwen3-8b__20260603_211622/answers.json",
+  "evaluator_model": "qwen-plus",
+  "endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "judge_preset": "qwen-plus",
+  "judge_mode": "remote_openai_compatible",
+  "embedding_model_path": "/home/txs/.cache/huggingface/hub/models--BAAI--bge-large-zh-v1.5",
+  "metrics": [
+    "faithfulness"
+  ],
+  "answer_relevancy_strictness": 1,
+  "metric_notes": {
+    "faithfulness": "Higher is better.",
+    "answer_relevancy": "Higher is better.",
+    "context_precision": "Higher is better.",
+    "context_recall": "Higher is better.",
+    "noise_sensitivity": "Lower is better."
+  },
+  "overall": {
+    "faithfulness": 1.0
+  },
+  "by_type": {
+    "fact": {
+      "faithfulness": 1.0
+    }
+  }
+}
