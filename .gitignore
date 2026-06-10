@@ -33,6 +33,7 @@ data/
 data_parsed/
 data_chunked/
 indexes/
+output/qa
 
 # Streamlit / cache
 .streamlit/
