@@ -20,6 +20,17 @@
 
 ![金融研报 RAG Demo 证据与索引管理](Fig/demo2.png)
 
+## 文档导航
+
+如果你想继续深入看方法细节、实验设计和评测规则，可以直接从下面这些文档跳转：
+
+- [docs/PROJECT_DOC_SUMMARY_CN.md](docs/PROJECT_DOC_SUMMARY_CN.md)：项目总览文档，适合快速理解整条金融研报 RAG 链路、关键优化点和阶段性结论。
+- [docs/PDF_PARSING_METHOD.md](docs/PDF_PARSING_METHOD.md)：PDF 解析方法说明，介绍 DeepDoc 和 Legacy Parser 两条解析路线，以及表格、图表、阅读顺序的处理方式。
+- [docs/RETRIEVAL_3WAY.md](docs/RETRIEVAL_3WAY.md)：三路检索实现说明，覆盖向量召回、BM25、Hybrid WeightSum、Hybrid RRF 和二阶段 rerank 的设计。
+- [docs/BUILD_EVAL.md](docs/BUILD_EVAL.md)：评测集构建与严格召回规则，说明 125 条人工标注样本的设计原则、证据标注方式和判定逻辑。
+- [docs/chunk_strategy_comparison.md](docs/chunk_strategy_comparison.md)：当前版本的 chunk 策略对比结果，便于观察不同 `chunk_size / overlap` 对切块统计的影响。
+- [docs/chunk_strategy_comparison0.md](docs/chunk_strategy_comparison0.md)：早期版本的 chunk 策略对比结果，可作为历史实验基线参考。
+
 项目当前围绕三类真实难题展开：
 
 - 金融 PDF 结构复杂，表格、图注、封面摘要和跨页段落很多
