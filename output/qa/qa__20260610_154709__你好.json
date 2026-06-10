@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-06-10T15:47:09",
+  "query": "你好",
+  "router": {
+    "decision": "DIRECT",
+    "reason": "问候语，无需检索",
+    "source": "llm"
+  },
+  "rewrite": null,
+  "effective_query": "你好",
+  "answer_mode": "llm",
+  "retrieval_used": false,
+  "params": {
+    "route": "hybrid_weightsum",
+    "first_stage_top_k": 50,
+    "rerank_top_k": 8,
+    "rerank_threshold": 0.5,
+    "vector_candidate_k": 50,
+    "bm25_candidate_k": 50,
+    "query_decompose": true
+  },
+  "retrieval_summary": {
+    "hit_count": 0,
+    "top_hits": []
+  },
+  "answer": {
+    "text": "你好！有什么我可以帮你的吗？",
+    "confidence": "medium",
+    "should_refuse": false,
+    "claims": [],
+    "used_evidence": [],
+    "invalid_claims": []
+  },
+  "evidences": [],
+  "timings": [
+    {
+      "stage": "heuristic_router",
+      "seconds": 1.0646006558090448e-05
+    },
+    {
+      "stage": "llm_router",
+      "seconds": 0.7430141539953183
+    },
+    {
+      "stage": "direct_generation",
+      "seconds": 0.7245107290218584
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-06-10T16:22:00",
+  "query": "国民技术和艾森股份2026年营收预测谁更高？",
+  "router": {
+    "decision": "RETRIEVE",
+    "reason": "命中金融/公司/行业相关关键词",
+    "source": "heuristic"
+  },
+  "rewrite": {
+    "need_rewrite": true,
+    "reason": "当前问题属于对比型问题，需结合历史补全比较对象",
+    "query_type": "compare",
+    "rewritten_query": "国民技术和艾森股份2026年营收预测谁更高？",
+    "source": "llm"
+  },
+  "effective_query": "国民技术和艾森股份2026年营收预测谁更高？",
+  "answer_mode": "llm",
+  "retrieval_used": true,
+  "params": {
+    "route": "hybrid_weightsum",
+    "first_stage_top_k": 50,
+    "rerank_top_k": 8,
+    "rerank_threshold": 0.5,
+    "vector_candidate_k": 50,
+    "bm25_candidate_k": 50,
+    "query_decompose": true
+  },
+  "retrieval_summary": {
+    "hit_count": 8,
+    "top_hits": [
+      {
+        "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+        "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0001",
+        "chunk_type": "raw_table_chunk",
+        "page_start": 2,
+        "page_end": 2,
+        "fused_score": 0.644022709315658,
+        "reranker_score": 6.859375,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf"
+      },
+      {
+        "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+        "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__text_0004",
+        "chunk_type": "text_chunk",
+        "page_start": 1,
+        "page_end": 1,
+        "fused_score": 1.0,
+        "reranker_score": 6.3984375,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf"
+      },
+      {
+        "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+        "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0006",
+        "chunk_type": "text_chunk",
+        "page_start": 2,
+        "page_end": 2,
+        "fused_score": 0.7515648149789755,
+        "reranker_score": 5.9140625,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf"
+      }
+    ]
+  },
+  "answer": {
+    "text": "根据中邮证券的研究报告，艾森股份2026年的营收预测为79.6亿元，而国民技术2026年的营收预测为19.08亿元。因此，艾森股份2026年的营收预测高于国民技术。",
+    "confidence": "high",
+    "should_refuse": false,
+    "claims": [
+      {
+        "claim": "艾森股份2026年的营收预测为79.6亿元。",
+        "citations": [
+          "E3"
+        ]
+      },
+      {
+        "claim": "国民技术2026年的营收预测为19.08亿元。",
+        "citations": [
+          "E2"
+        ]
+      }
+    ],
+    "used_evidence": [
+      "E2",
+      "E3"
+    ],
+    "invalid_claims": []
+  },
+  "evidences": [
+    {
+      "evidence_id": "E1",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0001",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 6.859375,
+      "fused_score": 0.644022709315658,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>盈利预测和财务指标资料来源：公司公告，中邮证券研究所</caption>\n<tr><th >[项ta目bl\\e年_F度in</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >营业收入（百万元） 增长率(%)</td><td >593 37.13 </td><td >796 34.24 </td><td >1046 31.51 </td><td >1390 32.84</td></tr>\n<tr><td >EBITDA（百万元） 归属母公司净利润（百万元） 增长率(%)</td><td >78.13 51.24 53.05 </td><td >132.20 70.76 38.11 </td><td >187.34 110.82 56.61 </td><td >269.81 163.62 47.64</td></tr>\n<tr><td >EPS(元/股) 市盈率（P/E）</td><td >0.58 157.42 </td><td >0.80 113.98 </td><td >1.26 72.78 </td><td >1.86 49.30</td></tr>\n<tr><td >市净率（P/B） EV/EBITDA </td><td >7.83 79.84 </td><td >7.32 62.39 </td><td >6.65 44.17 </td><td >5.86 30.86</td></tr>\n</table>"
+    },
+    {
+      "evidence_id": "E2",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__text_0004",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 6.3984375,
+      "fused_score": 1.0,
+      "chunk_type": "text_chunk",
+      "text": "l 盈利预测\n\n我们预计公司2026/2027/2028年营收分别为19.1/26.6/34.9 亿元，归母净利润分别为0.1/3.0/5.5亿元，首次覆盖给予“买入”评级。"
+    },
+    {
+      "evidence_id": "E3",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0006",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 5.9140625,
+      "fused_score": 0.7515648149789755,
+      "chunk_type": "text_chunk",
+      "text": "投资建议\n\nl\n\n我们预计公司2026/2027/2028 年分别实现收入 7.96/10.46/13.90亿元，归母净利润0.71/1.11/1.64亿元，维持“买入”评级。"
+    },
+    {
+      "evidence_id": "E4",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 5.3671875,
+      "fused_score": 0.365744792069671,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>盈利预测和财务指标资料来源：公司公告，中邮证券研究所</caption>\n<tr><th >[项ta目bl\\e年_F度in</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >营业收入（百万元）</td><td >1360 </td><td >1908 </td><td >2657 </td><td >3491</td></tr>\n<tr><td >增长率(%)</td><td >16.51 </td><td >40.24 </td><td >39.29 </td><td >31.38</td></tr>\n<tr><td >EBITDA（百万元）</td><td >107.04 </td><td >285.35 </td><td >583.57 </td><td >786.12</td></tr>\n<tr><td >归属母公司净利润（百万元） 增长率(%)</td><td >-115.42 50.96 </td><td >12.47 110.80</td><td >300.09 2306.73 </td><td >548.83 82.89</td></tr>\n<tr><td >EPS(元/股)</td><td >-0.17 </td><td >0.02 </td><td >0.44 </td><td >0.81</td></tr>\n<tr><td >市盈率（P/E）</td><td >-146.30 </td><td >1354.20 </td><td >56.27 </td><td >30.77</td></tr>\n<tr><td >市净率（P/B）</td><td >18.35 </td><td >9.54 </td><td >8.29 </td><td >6.68</td></tr>\n<tr><td >EV/EBITDA </td><td >124.83 </td><td >59.05 </td><td >28.04 </"
+    },
+    {
+      "evidence_id": "E5",
+      "doc_id": "031_2026-05-06_中微公司688012_交银国际证券_1Q26营收延续增长，毛利率稳中有升，产品进一步取得进展",
+      "chunk_id": "031_2026_05_06_中微公司688012_交银国际证券_1Q26营收延续增长_毛利率稳__text_0008",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/031_2026-05-06_中微公司688012_交银国际证券_1Q26营收延续增长，毛利率稳中有升，产品进一步取得进展.pdf",
+      "page_start": 6,
+      "page_end": 6,
+      "reranker_score": 2.009765625,
+      "fused_score": 0.0961368935244652,
+      "chunk_type": "text_chunk",
+      "text": "股份有限公司、上海森亿医疗科技股份有限公司、协创数据技术股份有限公司、上海宝济药业股份有限公司、深圳迅策科技股份有限公司、北京智谱华章科技股份有限公司、天九共享智慧企业服务股份有限公司、红星冷链（湖南）股份有限公司、爱芯元智半导体股份有限公司、牧原食\n\n品股份有限公司、国民技術股份有限公司、福份有限信富通科技股份有限公司、寧波菲仕技術股份有限公司、智慧互通科技股份有限公司、深圳市兆威机电股份有限公司、南京埃斯顿自动化股公司、上海易景信息科技股份有限公司及广东云徙智能科技股份有限公司有投资银行业务关系。\n\n交银国际证券有限公司及/或其集团公司现持有东方证券股份有限公司及光大证券股份有限公司的已发行股本逾1%。"
+    },
+    {
+      "evidence_id": "E6",
+      "doc_id": "031_2026-05-06_中微公司688012_交银国际证券_1Q26营收延续增长，毛利率稳中有升，产品进一步取得进展",
+      "chunk_id": "031_2026_05_06_中微公司688012_交银国际证券_1Q26营收延续增长_毛利率稳__text_0003",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/031_2026-05-06_中微公司688012_交银国际证券_1Q26营收延续增长，毛利率稳中有升，产品进一步取得进展.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 0.83544921875,
+      "fused_score": 0.09582808190056145,
+      "chunk_type": "text_chunk",
+      "text": "我们预测2026 年ICP 产品收入超过CCP 收入，分别达到65.9/62.7 亿元，预测薄膜沉积产品收入达到8.0 亿元。\n\n?上调目标价到448 元：我们认为，部分客户资本开支或在2026 年小幅回落后在2027 年重新加速上涨。同时考虑到国产存储芯片客户中短期扩产积极，我们上调2027 年公司营收预测到219.2 亿元（前值196.0 亿元） ，微调2026 年营收预测到164.2 亿元（前值162.6 亿元）。我们看到公司毛利率水平在之前小幅下降后近期出现反弹，虽然行业竞争加剧，但我们认为公司在前道设备ICP/CCP 和部分薄膜沉积产品上具备技术优势。我们上调2026/27 年EPS 预测到6.01/7.47 元（前值5.56/6.96 元）。我们维持买入评级，上调目标价到448 元（前值418 元），对应60 倍（维持前值不变）2027 年市盈率。"
+    },
+    {
+      "evidence_id": "E7",
+      "doc_id": "030_2026-05-06_北方华创002371_交银国际证券_营收持续高增长，毛利率1Q26反弹",
+      "chunk_id": "030_2026_05_06_北方华创002371_交银国际证券_营收持续高增长_毛利率1Q26__text_0008",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/030_2026-05-06_北方华创002371_交银国际证券_营收持续高增长，毛利率1Q26反弹.pdf",
+      "page_start": 6,
+      "page_end": 6,
+      "reranker_score": 0.57373046875,
+      "fused_score": 0.10839197487581215,
+      "chunk_type": "text_chunk",
+      "text": "股份有限公司、上海森亿医疗科技股份有限公司、协创数据技术股份有限公司、上海宝济药业股份有限公司、深圳迅策科技股份有限公司、北京智谱华章科技股份有限公司、天九共享智慧企业服务股份有限公司、红星冷链（湖南）股份有限公司、爱芯元智半导体股份有限公司、牧原食\n\n品股份有限公司、国民技術股份有限公司、福份有限信富通科技股份有限公司、寧波菲仕技術股份有限公司、智慧互通科技股份有限公司、深圳市兆威机电股份有限公司、南京埃斯顿自动化股公司、上海易景信息科技股份有限公司及广东云徙智能科技股份有限公司有投资银行业务关系。\n\n交银国际证券有限公司及/或其集团公司现持有东方证券股份有限公司及光大证券股份有限公司的已发行股本逾1%。"
+    },
+    {
+      "evidence_id": "E8",
+      "doc_id": "035_2026-04-20_爱建证券_电子行业周报：AI需求持续高景气，先进制程产能加速扩张",
+      "chunk_id": "035_2026_04_20_爱建证券_电子行业周报_AI需求持续高景气_先进制程产能加速扩张__text_0012",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/semi_pdfs/035_2026-04-20_爱建证券_电子行业周报：AI需求持续高景气，先进制程产能加速扩张.pdf",
+      "page_start": 5,
+      "page_end": 6,
+      "reranker_score": 0.2225341796875,
+      "fused_score": 0.14502972094196834,
+      "chunk_type": "text_chunk",
+      "text": "26Q1公司HPC收入环比增长20%，收入占比达到61%；智能手机收入环比下滑11%，收入占比为26%。\n\n公司预计2026Q2销售额在390亿至402亿美元之间（在1美元=31.7新台币）， 高于市场预估的381.1亿美元；预计2026Q2毛利率为65.5％至67.5％，营业利润率为56.5%-58.5%。\n\n制程与产能布局上，N2工艺已进入大规模量产阶段。为满足市场强劲的AI 芯片需求， 公司正加大资本支出力度以提升N3工艺产能，同时稳步推进日本和德国基地的成熟\n\n制程产能建设。此外，公司计划逐步关闭6英寸晶圆厂，并将持续优化整体产能策略。 关于下一代先进制程，A14工艺预计将于2028年正式启动量产。\n\n2026年4月15日，ASML 发布2026Q1财报。财报数据显示，ASML 2026Q1营收87.67亿欧元，同比增长13.24%；净利润达27.57亿欧元，同比+17.07%；毛利率为53.0%。在2026Q1，ASML 共售出了67台光刻机，另外还有12台二手的光刻机，季度末现金及现金等价物和短期投资合计83.76亿欧元。"
+    }
+  ],
+  "timings": [
+    {
+      "stage": "heuristic_router",
+      "seconds": 1.1194992111995816e-05
+    },
+    {
+      "stage": "rewrite_planning",
+      "seconds": 3.021196671994403
+    },
+    {
+      "stage": "retriever_init",
+      "seconds": 1.0560033842921257e-06
+    },
+    {
+      "stage": "retrieve_two_stage",
+      "seconds": 0.4358109069871716
+    },
+    {
+      "stage": "build_evidence_items",
+      "seconds": 1.542799873277545e-05
+    },
+    {
+      "stage": "refusal_gate",
+      "seconds": 2.315005986019969e-06
+    },
+    {
+      "stage": "rag_generation",
+      "seconds": 7.053301121981349
+    },
+    {
+      "stage": "post_check",
+      "seconds": 1.0160991223528981e-05
+    }
+  ]
+}

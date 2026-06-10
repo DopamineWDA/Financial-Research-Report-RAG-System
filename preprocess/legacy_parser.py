@@ -19,13 +19,17 @@ from pathlib import Path
 from statistics import median
 from typing import Any, Iterable
 
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+RAGFLOW_VENV_PYTHON = REPO_ROOT.parent / "ragflow" / ".venv" / "bin" / "python"
+
 try:
     import fitz
 except ModuleNotFoundError as exc:
     raise SystemExit(
         "Missing dependency: PyMuPDF (import name: fitz).\n"
         "Install it in the Python environment you use to run this script, for example:\n"
-        "  uv pip install --python /home/txs/work/zyp/ragflow/.venv/bin/python PyMuPDF\n"
+        f"  uv pip install --python {RAGFLOW_VENV_PYTHON} PyMuPDF\n"
         "or run this legacy parser with an environment that already has PyMuPDF."
     ) from exc
 
@@ -35,7 +39,7 @@ except ModuleNotFoundError as exc:
     raise SystemExit(
         "Missing dependency: pdfplumber.\n"
         "Install it in the Python environment you use to run this script, for example:\n"
-        "  uv pip install --python /home/txs/work/zyp/ragflow/.venv/bin/python pdfplumber"
+        f"  uv pip install --python {RAGFLOW_VENV_PYTHON} pdfplumber"
     ) from exc
 
 
@@ -1460,7 +1464,7 @@ class FinancialPDFParser:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Parse financial research PDFs with layout-aware heuristics.")
     parser.add_argument("--input", required=True, action="append", help="PDF file or directory path. Can be absolute. Repeat --input for multiple paths.")
-    parser.add_argument("--output-dir", default="/home/txs/work/zyp/RAG/outputs/legacy/", help="Directory for JSON/Markdown/HTML review outputs.")
+    parser.add_argument("--output-dir", default=str(REPO_ROOT / "output" / "legacy_parse"), help="Directory for JSON/Markdown/HTML review outputs.")
     parser.add_argument("--max-files", type=int, default=0, help="Limit number of PDFs parsed. 0 means no limit.")
     parser.add_argument("--max-chars", type=int, default=1800, help="Target chunk size in characters.")
     args = parser.parse_args()

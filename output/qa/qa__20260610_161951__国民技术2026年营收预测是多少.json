@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-06-10T16:19:51",
+  "query": "国民技术2026年营收预测是多少？",
+  "router": {
+    "decision": "RETRIEVE",
+    "reason": "命中金融/公司/行业相关关键词",
+    "source": "heuristic"
+  },
+  "rewrite": {
+    "need_rewrite": true,
+    "reason": "当前问题已完整，只需轻微规范化",
+    "query_type": "fact",
+    "rewritten_query": "国民技术2026年营业收入预测是多少？",
+    "source": "llm"
+  },
+  "effective_query": "国民技术2026年营业收入预测是多少？",
+  "answer_mode": "llm",
+  "retrieval_used": true,
+  "params": {
+    "route": "hybrid_weightsum",
+    "first_stage_top_k": 50,
+    "rerank_top_k": 8,
+    "rerank_threshold": 0.5,
+    "vector_candidate_k": 50,
+    "bm25_candidate_k": 50,
+    "query_decompose": true
+  },
+  "retrieval_summary": {
+    "hit_count": 8,
+    "top_hits": [
+      {
+        "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+        "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__text_0004",
+        "chunk_type": "text_chunk",
+        "page_start": 1,
+        "page_end": 1,
+        "fused_score": 0.8992455934664336,
+        "reranker_score": 6.47265625,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf"
+      },
+      {
+        "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+        "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0002",
+        "chunk_type": "raw_table_chunk",
+        "page_start": 2,
+        "page_end": 2,
+        "fused_score": 0.42311246574289885,
+        "reranker_score": 5.640625,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf"
+      },
+      {
+        "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+        "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0004",
+        "chunk_type": "raw_table_chunk",
+        "page_start": 3,
+        "page_end": 3,
+        "fused_score": 0.1863610945761508,
+        "reranker_score": 3.865234375,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf"
+      }
+    ]
+  },
+  "answer": {
+    "text": "根据中邮证券的研究报告，国民技术2026年的营收预测为19.08亿元。",
+    "confidence": "high",
+    "should_refuse": false,
+    "claims": [
+      {
+        "claim": "中邮证券预测国民技术2026年营业收入为19.08亿元。",
+        "citations": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "claim": "中邮证券预测国民技术2026年营业收入同比增长率为40.24%。",
+        "citations": [
+          "E2",
+          "E3"
+        ]
+      }
+    ],
+    "used_evidence": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "invalid_claims": []
+  },
+  "evidences": [
+    {
+      "evidence_id": "E1",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__text_0004",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 6.47265625,
+      "fused_score": 0.8992455934664336,
+      "chunk_type": "text_chunk",
+      "text": "l 盈利预测\n\n我们预计公司2026/2027/2028年营收分别为19.1/26.6/34.9 亿元，归母净利润分别为0.1/3.0/5.5亿元，首次覆盖给予“买入”评级。"
+    },
+    {
+      "evidence_id": "E2",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 5.640625,
+      "fused_score": 0.42311246574289885,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>盈利预测和财务指标资料来源：公司公告，中邮证券研究所</caption>\n<tr><th >[项ta目bl\\e年_F度in</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >营业收入（百万元）</td><td >1360 </td><td >1908 </td><td >2657 </td><td >3491</td></tr>\n<tr><td >增长率(%)</td><td >16.51 </td><td >40.24 </td><td >39.29 </td><td >31.38</td></tr>\n<tr><td >EBITDA（百万元）</td><td >107.04 </td><td >285.35 </td><td >583.57 </td><td >786.12</td></tr>\n<tr><td >归属母公司净利润（百万元） 增长率(%)</td><td >-115.42 50.96 </td><td >12.47 110.80</td><td >300.09 2306.73 </td><td >548.83 82.89</td></tr>\n<tr><td >EPS(元/股)</td><td >-0.17 </td><td >0.02 </td><td >0.44 </td><td >0.81</td></tr>\n<tr><td >市盈率（P/E）</td><td >-146.30 </td><td >1354.20 </td><td >56.27 </td><td >30.77</td></tr>\n<tr><td >市净率（P/B）</td><td >18.35 </td><td >9.54 </td><td >8.29 </td><td >6.68</td></tr>\n<tr><td >EV/EBITDA </td><td >124.83 </td><td >59.05 </td><td >28.04 </"
+    },
+    {
+      "evidence_id": "E3",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0004",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "reranker_score": 3.865234375,
+      "fused_score": 0.1863610945761508,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table>\n<tr><th >主要财务比率</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >成长能力营业收入</td><td >16.5% </td><td >40.2% </td><td >39.3% </td><td >31.4%</td></tr>\n<tr><td >营业利润</td><td >50.2% </td><td >110.3% </td><td >2,345.4% </td><td >82.0%</td></tr>\n<tr><td >归属于母公司净利润</td><td >51.0% </td><td >110.8% </td><td >2,306.7% </td><td >82.9%</td></tr>\n<tr><th >获利能力</th><th></th><th></th><th></th><th></th></tr>\n<tr><td >毛利率</td><td >20.0% </td><td >21.7% </td><td >28.3% </td><td >30.4%</td></tr>\n<tr><td >净利率</td><td >-8.5%</td><td >0.7% </td><td >11.3% </td><td >15.7%</td></tr>\n<tr><td >ROE </td><td >-12.5%</td><td >0.7% </td><td >14.7% </td><td >21.7%</td></tr>\n<tr><td >ROIC </td><td >-1.6%</td><td >1.1% </td><td >10.7% </td><td >17.7%</td></tr>\n<tr><th >偿债能力</th><th></th><th></th><th></th><th></th></tr>\n<tr><td >资产负债率</td><td >73.8% </td><td >52.6% </td><td >44.9% <"
+    },
+    {
+      "evidence_id": "E4",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0003",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "reranker_score": 3.267578125,
+      "fused_score": 0.20289951048821328,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>[财t务ab报le表_和Fi主nc要hi财n务aD比et率ai</caption>\n<tr><th >财务报表(百万元)</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E </th></tr>\n<tr><th >利润表</th><th></th><th></th><th></th><th></th></tr>\n<tr><td >营业收入</td><td >1360 </td><td >1908 </td><td >2657 </td><td >3491 </td></tr>\n<tr><td >营业成本</td><td >1088 </td><td >1493 </td><td >1906 </td><td >2428 </td></tr>\n<tr><td >税金及附加</td><td >9 </td><td >12 </td><td >16 </td><td >21 </td></tr>\n<tr><td >销售费用</td><td >49 </td><td >67 </td><td >69 </td><td >77 </td></tr>\n<tr><td >管理费用</td><td >108 </td><td >151 </td><td >173 </td><td >209 </td></tr>\n<tr><td >研发费用</td><td >166 </td><td >229 </td><td >239 </td><td >258 </td></tr>\n<tr><td >财务费用</td><td >81 </td><td >22 </td><td >12 </td><td >4 </td></tr>\n<tr><td >资产减值损失</td><td >-15 </td><td >0 </td><td >0 </td><td >0 </td></tr>\n<tr><td >营业利润</td><td >-134 </td><td >14 </td><td >338 </td"
+    },
+    {
+      "evidence_id": "E5",
+      "doc_id": "005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进",
+      "chunk_id": "005_2026_05_19_国民技术300077_中邮证券_光模块MCU积极推进__raw_table_0001",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/005_2026-05-19_国民技术300077_中邮证券_光模块MCU积极推进.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 1.65625,
+      "fused_score": 0.046123810096360754,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>公司基本情况</caption>\n<tr><td >最新收盘价（元） 24.90 总股本/流通股本（亿股）6.78 /5.66 总市值/流通市值（亿元）169 /141</td><td></td></tr>\n<tr><td >52周内最高/最低价资产负债率(%)</td><td >29.14 /18.74 73.8%</td></tr>\n<tr><th >市盈率第一大股东</th><th >-124.50 孙迎彤</th></tr>\n</table>"
+    },
+    {
+      "evidence_id": "E6",
+      "doc_id": "046_2026-01-09_并行科技920493_华源证券_发布2026年股权激励计划彰显发展信心，智算云平台已部署DeepSeek、智谱等大模型",
+      "chunk_id": "046_2026_01_09_并行科技920493_华源证券_发布2026年股权激励计划彰显发展__raw_table_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_it_service_pdfs/046_2026-01-09_并行科技920493_华源证券_发布2026年股权激励计划彰显发展信心，智算云平台已部署DeepSeek、智谱等大模型.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 0.150146484375,
+      "fused_score": 0.04955309940441216,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>风险提示：技术替代风险、人才引进和流失风险、数据泄露的潜在风险。盈利预测与估值（人民币）资料来源：公司公告，华源证券研究所预测</caption>\n<tr><th></th><th >2023 </th><th >2024 </th><th >2025E </th><th >2026E </th><th >2027E</th></tr>\n<tr><td >营业收入（百万元） 同比增长率（%） 归母净利润（百万元） 同比增长率（%）</td><td >496 58.47% -80 29.69% </td><td >655 32.07% 12 114.98% </td><td >863 31.86% 24 98.60% </td><td >1,116 29.27% 36 51.68% </td><td >1,364 22.28% 48 32.14%</td></tr>\n<tr><td >每股收益（元/股） ROE（%） 市盈率（P/E）</td><td >-1.35 -23.92% -109.04 </td><td >0.20 3.45% 728.00 </td><td >0.40 6.41% 366.56 </td><td >0.61 8.86% 241.67 </td><td >0.80 10.48% 182.89</td></tr>\n</table>"
+    },
+    {
+      "evidence_id": "E7",
+      "doc_id": "041_2026-03-08_并行科技920493_华源证券_2025年归母净利润预计同比+81%，智算云收入高增+国产算力布局有望贡献核心增量",
+      "chunk_id": "041_2026_03_08_并行科技920493_华源证券_2025年归母净利润预计同比_81__raw_table_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_it_service_pdfs/041_2026-03-08_并行科技920493_华源证券_2025年归母净利润预计同比+81%，智算云收入高增+国产算力布局有望贡献核心增量.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": -0.5087890625,
+      "fused_score": 0.04831917666648274,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>盈利预测与估值（人民币）资料来源：公司公告，华源证券研究所预测</caption>\n<tr><th></th><th >2023 </th><th >2024 </th><th >2025E </th><th >2026E </th><th >2027E</th></tr>\n<tr><td >营业收入（百万元） 同比增长率（%） 归母净利润（百万元） 同比增长率（%）</td><td >496 58.47% -80 29.69% </td><td >655 32.07% 12 114.98% </td><td >1,110 69.56% 22 80.91% </td><td >1,387 24.96% 36 66.82% </td><td >1,711 23.39% 49 35.08%</td></tr>\n<tr><td >每股收益（元/股）</td><td >-1.35 </td><td >0.20 </td><td >0.37 </td><td >0.61 </td><td >0.82</td></tr>\n<tr><td >ROE（%） 市盈率（P/E）</td><td >-23. 92% -122.62 </td><td >3.45% 818.68 </td><td >5.87% 452.54 </td><td >8.92% 271.28 </td><td >10.76% 200.84</td></tr>\n</table>"
+    },
+    {
+      "evidence_id": "E8",
+      "doc_id": "007_2026-05-09_并行科技920493_西南证券_2026年一季报点评：26Q1业绩延续高增，规模效应逐步显现",
+      "chunk_id": "007_2026_05_09_并行科技920493_西南证券_2026年一季报点评_26Q1业绩__text_0010",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_it_service_pdfs/007_2026-05-09_并行科技920493_西南证券_2026年一季报点评：26Q1业绩延续高增，规模效应逐步显现.pdf",
+      "page_start": 4,
+      "page_end": 4,
+      "reranker_score": -1.0830078125,
+      "fused_score": 0.03977255846118382,
+      "chunk_type": "text_chunk",
+      "text": "2026-2028年五家可比公司平均估值为11/10/9倍。\n\n预计公司2026-2028 年营业收入分别为15.3/19.7/23.5 亿元，yoy 分别为 37.6%/28.7%/19.5%；预计公司2026-2028 年归母净利润分别为43.7/74.6/101.9 百万元， yoy 分别为257.5%/70.8%/36.6%，对应PS分别为6/5/4倍。公司作为国内超算云领域龙头， 在行业内具有经验、技术以及先发优势。随着生成式人工智能、人工智能赋能基础科研、大数据等新技术和新应用领域的快速推广普及，下游领域预计仍将保持较高算力服务需求，公司规模效应有望逐步显现，业绩将维持高增长趋势，同时考虑到北交所标的高弹性特点，维持“买入”评级。"
+    }
+  ],
+  "timings": [
+    {
+      "stage": "heuristic_router",
+      "seconds": 1.1908996384590864e-05
+    },
+    {
+      "stage": "rewrite_planning",
+      "seconds": 3.0037848020147067
+    },
+    {
+      "stage": "retriever_init",
+      "seconds": 1.3399985618889332e-06
+    },
+    {
+      "stage": "retrieve_two_stage",
+      "seconds": 0.3402973960037343
+    },
+    {
+      "stage": "build_evidence_items",
+      "seconds": 2.4506996851414442e-05
+    },
+    {
+      "stage": "refusal_gate",
+      "seconds": 2.447020960971713e-06
+    },
+    {
+      "stage": "rag_generation",
+      "seconds": 6.875240446010139
+    },
+    {
+      "stage": "post_check",
+      "seconds": 9.67600499279797e-06
+    }
+  ]
+}

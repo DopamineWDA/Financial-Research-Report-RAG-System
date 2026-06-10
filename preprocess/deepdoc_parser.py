@@ -11,6 +11,7 @@ import argparse
 import base64
 import enum
 import html
+import importlib.util
 import json
 import logging
 import re
@@ -23,12 +24,24 @@ from typing import Any
 from urllib import error as urllib_error
 from urllib import request as urllib_request
 
+BOOTSTRAP_ROOT = Path(__file__).resolve().parents[1]
+if str(BOOTSTRAP_ROOT) not in sys.path:
+    sys.path.insert(0, str(BOOTSTRAP_ROOT))
 
-ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT.parent
-RAGFLOW_ROOT = PROJECT / "ragflow"
-if str(PROJECT) not in sys.path:
-    sys.path.insert(0, str(PROJECT))
+_COMMON_PATHS_SPEC = importlib.util.spec_from_file_location("rag_project_common_paths", BOOTSTRAP_ROOT / "common" / "paths.py")
+if _COMMON_PATHS_SPEC is None or _COMMON_PATHS_SPEC.loader is None:
+    raise RuntimeError(f"Failed to load project paths module from {BOOTSTRAP_ROOT / 'common' / 'paths.py'}")
+_COMMON_PATHS_MODULE = importlib.util.module_from_spec(_COMMON_PATHS_SPEC)
+_COMMON_PATHS_SPEC.loader.exec_module(_COMMON_PATHS_MODULE)
+
+DEFAULT_VISION_MODEL = _COMMON_PATHS_MODULE.DEFAULT_VISION_MODEL
+DEFAULT_XINFERENCE_ENDPOINT = _COMMON_PATHS_MODULE.DEFAULT_XINFERENCE_ENDPOINT
+OUTPUT_ROOT = _COMMON_PATHS_MODULE.OUTPUT_ROOT
+RAGFLOW_ROOT = _COMMON_PATHS_MODULE.RAGFLOW_ROOT
+WORKSPACE_ROOT = _COMMON_PATHS_MODULE.WORKSPACE_ROOT
+
+if str(WORKSPACE_ROOT) not in sys.path:
+    sys.path.insert(0, str(WORKSPACE_ROOT))
 if str(RAGFLOW_ROOT) not in sys.path:
     sys.path.insert(0, str(RAGFLOW_ROOT))
 
@@ -744,7 +757,7 @@ class DeepDocFinancialPDFParser:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Parse financial research PDFs with RAGFlow DeepDoc.")
     parser.add_argument("--input", required=True, action="append", help="PDF file or directory path. Can be absolute. Repeat --input for multiple paths.")
-    parser.add_argument("--output-dir", default="/home/txs/work/zyp/RAG/outputs/deepdoc/", help="Directory for JSON/Markdown/HTML review outputs.")
+    parser.add_argument("--output-dir", default=str(OUTPUT_ROOT / "deepdoc_parse"), help="Directory for JSON/Markdown/HTML review outputs.")
     parser.add_argument("--max-files", type=int, default=0, help="Limit number of PDFs parsed. 0 means no limit.")
     parser.add_argument("--max-chars", type=int, default=1800, help="Target chunk size in characters.")
     parser.add_argument("--zoomin", type=int, default=3, help="DeepDoc render/OCR zoom factor.")
@@ -754,8 +767,8 @@ def main() -> None:
     parser.add_argument("--json-only", action="store_true", help="Only write *.parsed.json; skip review Markdown/HTML.")
     parser.add_argument("--preserve-root", type=Path, default=None, help="Mirror input paths relative to this root under --output-dir.")
     parser.add_argument("--skip-existing", action="store_true", help="Skip PDFs whose target *.parsed.json already exists.")
-    parser.add_argument("--vision-model-path", default="/home/txs/work/zyp/LLM/Qwen2.5-VL-3B-Instruct", help="Local HuggingFace model dir for Qwen3-VL (enables figure/table vision enhancement).")
-    parser.add_argument("--vision-endpoint", default='http://127.0.0.1:9997', help="OpenAI-compatible vision endpoint, e.g. http://127.0.0.1:9997 or http://127.0.0.1:9997/v1/chat/completions.")
+    parser.add_argument("--vision-model-path", default=DEFAULT_VISION_MODEL, help="Local HuggingFace model dir for Qwen3-VL (enables figure/table vision enhancement).")
+    parser.add_argument("--vision-endpoint", default=DEFAULT_XINFERENCE_ENDPOINT, help="OpenAI-compatible vision endpoint, e.g. http://127.0.0.1:9997 or http://127.0.0.1:9997/v1/chat/completions.")
     parser.add_argument("--vision-model-name", default='qwen2.5-vl-3b', help="Model id exposed by the vision service, e.g. qwen3-vl-2b.")
     parser.add_argument("--vision-api-key", default=None, help="Optional API key for the vision service.")
     parser.add_argument("--vision-device", default="cuda:1", help="Torch device for vision model, e.g. cuda, cpu, cuda:0. Default: auto.")

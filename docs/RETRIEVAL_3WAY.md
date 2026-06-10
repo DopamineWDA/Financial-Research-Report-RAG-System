@@ -10,7 +10,7 @@
 
 - `RAG/retrieval/three_way_retriever.py`
 - `RAG/retrieval/__init__.py`
-- `RAG/scripts/search_retrieval.py`
+- `RAG/cli/search_retrieval.py`
 
 ## 设计说明
 
@@ -234,8 +234,9 @@ pip install FlagEmbedding
 ### 同时查看 3 路召回
 
 ```bash
-python RAG/scripts/search_retrieval.py \
-  --index-dir RAG/indexes/faiss_ivf_chunked_512_100_bge-large-zh-v1.5 \
+cd RAG
+python cli/search_retrieval.py \
+  --index-dir indexes/faiss_ivf_chunked_512_100_bge-large-zh-v1.5 \
   --query "哪些半导体公司受益于AI算力增长" \
   --route all \
   --top-k 5
@@ -244,7 +245,8 @@ python RAG/scripts/search_retrieval.py \
 ### 只看 BM25
 
 ```bash
-python RAG/scripts/search_retrieval.py \
+cd RAG
+python cli/search_retrieval.py \
   --query "寒武纪 服务器 CPU GPU 业绩" \
   --route bm25
 ```
@@ -252,8 +254,9 @@ python RAG/scripts/search_retrieval.py \
 ### 查看混合召回并调权重
 
 ```bash
-python RAG/scripts/search_retrieval.py \
-  --index-dir RAG/indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
+cd RAG
+python cli/search_retrieval.py \
+  --index-dir indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
   --query "核电 电价 机制电价 利润" \
   --route hybrid_weightsum \
   --first-stage-top-k 50 \
@@ -266,8 +269,9 @@ python RAG/scripts/search_retrieval.py \
 ### 查看混合召回并切换到 RRF
 
 ```bash
-python RAG/scripts/search_retrieval.py \
-  --index-dir RAG/indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
+cd RAG
+python cli/search_retrieval.py \
+  --index-dir indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
   --query "国产算力 资本开支 业绩" \
   --route hybrid_rrf \
   --first-stage-top-k 50 \
@@ -280,8 +284,9 @@ python RAG/scripts/search_retrieval.py \
 ### 两阶段 weightsum + reranker
 
 ```bash
-python RAG/scripts/search_retrieval.py \
-  --index-dir RAG/indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
+cd RAG
+python cli/search_retrieval.py \
+  --index-dir indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
   --query "哪些半导体设备公司受益于先进封装扩产" \
   --route hybrid_weightsum \
   --first-stage-top-k 50 \
@@ -297,8 +302,9 @@ python RAG/scripts/search_retrieval.py \
 ### 两阶段 RRF + reranker
 
 ```bash
-python RAG/scripts/search_retrieval.py \
-  --index-dir RAG/indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
+cd RAG
+python cli/search_retrieval.py \
+  --index-dir indexes/faiss_flat_chunked_512_50_bge-large-zh-v1.5 \
   --query "国产算力 资本开支 业绩" \
   --route hybrid_rrf \
   --first-stage-top-k 50 \
@@ -314,7 +320,8 @@ python RAG/scripts/search_retrieval.py \
 ### 输出 JSON 结果
 
 ```bash
-python RAG/scripts/search_retrieval.py \
+cd RAG
+python cli/search_retrieval.py \
   --query "国产算力 资本开支" \
   --route all \
   --json

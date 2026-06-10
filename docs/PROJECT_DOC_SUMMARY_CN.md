@@ -898,7 +898,7 @@ Legacy parser 保留下来，是为了避免整套系统完全绑定到单一视
 
 ## 5.1 切块统计
 
-来源：`RAG/data_chunked/chunk_strategy_comparison.md`
+来源：`RAG/docs/chunk_strategy_comparison.md`
 
 | chunk_size | overlap | total_chunks | avg_tokens/chunk |
 | ---: | ---: | ---: | ---: |

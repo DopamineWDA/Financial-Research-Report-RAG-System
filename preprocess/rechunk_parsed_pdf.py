@@ -18,9 +18,17 @@ import argparse
 import json
 import math
 import re
+import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
+
+
+BOOTSTRAP_ROOT = Path(__file__).resolve().parents[1]
+if str(BOOTSTRAP_ROOT) not in sys.path:
+    sys.path.insert(0, str(BOOTSTRAP_ROOT))
+
+from common.paths import CHUNKED_ROOT
 
 
 VALID_CHUNK_SIZES = {256, 512, 1024}
@@ -1393,7 +1401,7 @@ def build_output_path(parsed_file: Path, output_dir: Path | None, chunk_size: in
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Re-chunk parsed PDF JSON outputs into section-aware RAG chunks.")
     parser.add_argument("inputs", nargs="+", help="Parsed JSON files or directories containing them.")
-    parser.add_argument("--output-dir", default="/home/txs/work/zyp/RAG/data_chunked1", help="Optional output directory. Defaults to alongside each input file.")
+    parser.add_argument("--output-dir", default=str(CHUNKED_ROOT / "chunked_512_100"), help="Optional output directory. Defaults to alongside each input file.")
     parser.add_argument("--chunk-size", type=int, default=512, choices=sorted(VALID_CHUNK_SIZES), help="Target chunk size in tokens.")
     parser.add_argument("--overlap", type=int, default=100, choices=sorted(VALID_OVERLAPS), help="Overlap in tokens within the same section only.")
     parser.add_argument("--encoding", default="cl100k_base", help="tiktoken encoding name if available.")

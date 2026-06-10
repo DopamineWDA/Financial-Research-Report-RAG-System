@@ -1,0 +1,220 @@
+{
+  "timestamp": "2026-06-10T16:20:42",
+  "query": "艾森股份2026年营收预测",
+  "router": {
+    "decision": "RETRIEVE",
+    "reason": "命中金融/公司/行业相关关键词",
+    "source": "heuristic"
+  },
+  "rewrite": {
+    "need_rewrite": true,
+    "reason": "当前问题已完整，只需轻微规范化",
+    "query_type": "fact",
+    "rewritten_query": "艾森股份2026年营收预测是多少？",
+    "source": "llm"
+  },
+  "effective_query": "艾森股份2026年营收预测是多少？",
+  "answer_mode": "llm",
+  "retrieval_used": true,
+  "params": {
+    "route": "hybrid_weightsum",
+    "first_stage_top_k": 50,
+    "rerank_top_k": 8,
+    "rerank_threshold": 0.5,
+    "vector_candidate_k": 50,
+    "bm25_candidate_k": 50,
+    "query_decompose": true
+  },
+  "retrieval_summary": {
+    "hit_count": 8,
+    "top_hits": [
+      {
+        "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+        "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0001",
+        "chunk_type": "raw_table_chunk",
+        "page_start": 2,
+        "page_end": 2,
+        "fused_score": 0.5508351693625004,
+        "reranker_score": 7.28515625,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf"
+      },
+      {
+        "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+        "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0001",
+        "chunk_type": "text_chunk",
+        "page_start": 1,
+        "page_end": 1,
+        "fused_score": 0.43554402213100507,
+        "reranker_score": 6.30859375,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf"
+      },
+      {
+        "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+        "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0006",
+        "chunk_type": "text_chunk",
+        "page_start": 2,
+        "page_end": 2,
+        "fused_score": 0.7744901173280072,
+        "reranker_score": 6.23828125,
+        "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf"
+      }
+    ]
+  },
+  "answer": {
+    "text": "根据中邮证券的研究报告，艾森股份2026年的营收预测为79.6亿元。",
+    "confidence": "high",
+    "should_refuse": false,
+    "claims": [
+      {
+        "claim": "中邮证券预测艾森股份2026年营业收入为79.6亿元。",
+        "citations": [
+          "E1",
+          "E3"
+        ]
+      },
+      {
+        "claim": "中邮证券预测艾森股份2026年营业收入增长率约为34.24%。",
+        "citations": [
+          "E1"
+        ]
+      }
+    ],
+    "used_evidence": [
+      "E1",
+      "E3"
+    ],
+    "invalid_claims": []
+  },
+  "evidences": [
+    {
+      "evidence_id": "E1",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0001",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 7.28515625,
+      "fused_score": 0.5508351693625004,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>盈利预测和财务指标资料来源：公司公告，中邮证券研究所</caption>\n<tr><th >[项ta目bl\\e年_F度in</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >营业收入（百万元） 增长率(%)</td><td >593 37.13 </td><td >796 34.24 </td><td >1046 31.51 </td><td >1390 32.84</td></tr>\n<tr><td >EBITDA（百万元） 归属母公司净利润（百万元） 增长率(%)</td><td >78.13 51.24 53.05 </td><td >132.20 70.76 38.11 </td><td >187.34 110.82 56.61 </td><td >269.81 163.62 47.64</td></tr>\n<tr><td >EPS(元/股) 市盈率（P/E）</td><td >0.58 157.42 </td><td >0.80 113.98 </td><td >1.26 72.78 </td><td >1.86 49.30</td></tr>\n<tr><td >市净率（P/B） EV/EBITDA </td><td >7.83 79.84 </td><td >7.32 62.39 </td><td >6.65 44.17 </td><td >5.86 30.86</td></tr>\n</table>"
+    },
+    {
+      "evidence_id": "E2",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0001",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 6.30859375,
+      "fused_score": 0.43554402213100507,
+      "chunk_type": "text_chunk",
+      "text": "投资要点\n\nl\n\n业绩稳健增长，高毛利产品出货带动盈利能力提升。2025 年公司实现营收5.93亿元，同比增长37.13%，分板块来看，电镀液及配套试剂/光刻胶及配套试剂/电镀配套材料分别实现营收 2.88/1.36/1.48 亿元，分别同比增长47%/44%/17%。2025 年，公司实现归母净利润5,123.78 万元，同比增长53.05%；扣非净利润4,700.36万元，同比增长92.71%，盈利质量显著提升。26Q1 增长态势延续，26Q1 公司实现营收1.62 亿元，同比增长28.07%； 归母净利润941.65万元，同比增长24.50%，剔除股份支付后净利润为1,310.53万元，同比增长73.26%。随着高毛利产品进一步量产出货，公司的整体盈利水平有望持续提升。"
+    },
+    {
+      "evidence_id": "E3",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0006",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 2,
+      "page_end": 2,
+      "reranker_score": 6.23828125,
+      "fused_score": 0.7744901173280072,
+      "chunk_type": "text_chunk",
+      "text": "投资建议\n\nl\n\n我们预计公司2026/2027/2028 年分别实现收入 7.96/10.46/13.90亿元，归母净利润0.71/1.11/1.64亿元，维持“买入”评级。"
+    },
+    {
+      "evidence_id": "E4",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 4.7109375,
+      "fused_score": 0.09112067300691616,
+      "chunk_type": "text_chunk",
+      "text": "随着高毛利产品进一步量产出货，公司的整体盈利水平有望持续提升。\n\n晶圆制造电镀液“从零到一”突破，光刻胶强劲增长。公司两大核心业务齐头并进。电镀液业务方面，传统封装领域优势稳固，2025 年公司晶圆制造材料业务实现“从零到一”的突破，收入主要来源于先进制造电镀液及清洗类产品，其中28nm大马士革镀铜添加剂和先进钴制程电镀基液已在头部客户实现量产，同时也在向存储芯片厂商重点突破。光刻胶业务方面，受益于国产替代加速，高端产品批量落地。2025年光刻胶收入3,030.72万元，光刻胶及配套试剂业务同比增长44%，增速显著高于整体营收，成为业绩增长的核心驱动力之一。同时AI 芯片驱动HBM 堆叠层数提升，带动先进封装光刻胶需求从线性增长转为超线性爆发，作为国内唯一一家能够提供先进封装光刻胶全品类国产替代的厂商,公司在存储领域持续发力布局。"
+    },
+    {
+      "evidence_id": "E5",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0004",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 1,
+      "page_end": 1,
+      "reranker_score": 3.939453125,
+      "fused_score": 0.19707721791173388,
+      "chunk_type": "text_chunk",
+      "text": "最新收盘价（元） 91.52 总股本/流通股本（亿股）0.88 /0.56 总市值/流通市值（亿元）81 /52 52周内最高/最低价 91.68 /39.08 资产负债率(%) 25.6% 市盈率 155.12 第一大股东张兵\n\n国际化战略持续深化，业务布局与品牌影响力双提升。2025 年起，马来西亚子公司INOFINE 正式纳入合并报表范围，成为公司开拓东南亚及全球市场的核心支点。INOFINE在当地拥有成熟的客户资源与渠道优势，借助其本土团队，公司将光刻胶、电镀液等核心产品推向海外市场，填补东南亚高端半导体材料供给缺口，海外业务成为未来盈利增长的重要部分。2025 年，马来西亚业务已贡献公司近8%的营收，客户覆盖X-Fab、HP，以及日月光、长电科技等头部企业的东南亚工厂。未来，公司将以INOFINE为桥头堡， 深化渠道建设、扩大国际客户覆盖，并提升全球供应链韧性。"
+    },
+    {
+      "evidence_id": "E6",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0003",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "reranker_score": 3.541015625,
+      "fused_score": 0.29263644268053024,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table><caption>[财t务ab报le表_和Fi主nc要hi财n务aD比et率ai资料来源：公司公告，中邮证券研究所</caption>\n<tr><th >财务报表(百万元)</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E </th><th></th></tr>\n<tr><td colspan=5 rowspan=4 >利润表营业收入 593 796 1046 1390 营业成本 421 549 710 927 税金及附加 2 3 4 6 销售费用 35 45 管理费用 31 研发费用财务费用</td><td></td></tr>\n<tr><td colspan=5 rowspan=4 >56 71 40 50 61 69 92 116 143 </td><td></td></tr>\n<tr><td></td></tr>\n<tr><td></td></tr>\n<tr><td></td></tr>\n<tr><td colspan=5 rowspan=3 >-5 3 8 9 资产减值损失 -2 -1 -1 -2 营业利润 49 73 115 186 营业外收入 1 2 2 2 营业外支出 0 1 1 利润总额 50 116 </td><td></td></tr>\n<tr><td></td></tr>\n<tr><td></td></tr>\n<tr><td >所得税</td><td >-2 52 </td><td >74 </td><td></td><td></td><td></td></tr>\n<tr><td >净利润</td><td></td><td >3 71 </td><td >5 </td><td >1 187 </td><td></td></tr>\n<tr><th >归母净利润</th><th></th><th></th><th></th><th></th><th></th></tr>\n<tr><td >每股收益（元）</td><td >51 </td><td >71 </td"
+    },
+    {
+      "evidence_id": "E7",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__raw_table_0002",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 3,
+      "page_end": 3,
+      "reranker_score": 3.49609375,
+      "fused_score": 0.2598947861487805,
+      "chunk_type": "raw_table_chunk",
+      "text": "<table>\n<tr><th >主要财务比率成长能力</th><th >2025A </th><th >2026E </th><th >2027E </th><th >2028E</th></tr>\n<tr><td >营业收入营业利润归属于母公司净利润</td><td >37.1% 67.8% 53.1% </td><td >34.2% 49.0% 38.1% </td><td >31.5% 57.2% 56.6% </td><td >32.8% 62.0% 47.6%</td></tr>\n<tr><td >获利能力毛利率净利率</td><td >29.0% 8.6% </td><td >31.0% 8.9% </td><td >32.2% 10.6% </td><td >33.3% 11.8%</td></tr>\n<tr><td >ROE ROIC </td><td >5.0% 3.4% </td><td >6.4% 5.3% </td><td >9.1% 7.4% </td><td >11.9% 9.2%</td></tr>\n<tr><td >偿债能力资产负债率流动比率营运能力</td><td >25.6% 1.86 </td><td >30.3% 2.53 </td><td >33.6% 2.17 </td><td >36.1% 2.03</td></tr>\n<tr><th >应收账款周转率</th><th></th><th></th><th></th><th></th></tr>\n<tr><td >存货周转率</td><td >3.02 6.39 </td><td >3.13 6.54 </td><td >3.04 </td><td></td></tr>\n<tr><td >总资产周转率每股指标（元）</td><td >0.45 </td><td >0.53 </td><td >6.49 0.61 </td><td >6.61</td></tr>\n<tr><td >每股收益</td><td></td><td></td><td></td><td >0.70</td"
+    },
+    {
+      "evidence_id": "E8",
+      "doc_id": "006_2026-05-19_艾森股份688720_中邮证券_稳健增长",
+      "chunk_id": "006_2026_05_19_艾森股份688720_中邮证券_稳健增长__text_0005",
+      "source_pdf": "/home/txs/work/zyp/RAG/data/stock_semiconductor_pdfs/006_2026-05-19_艾森股份688720_中邮证券_稳健增长.pdf",
+      "page_start": 1,
+      "page_end": 2,
+      "reranker_score": 2.17578125,
+      "fused_score": 0.3,
+      "chunk_type": "text_chunk",
+      "text": "未来，公司将以INOFINE为桥头堡， 深化渠道建设、扩大国际客户覆盖，并提升全球供应链韧性。\n\n拟投资20亿建设华东基地，构建技术、产能、市场正向循环。 2026 年1 月，公司公告拟投资20 亿元建设艾森集成电路材料华东制造基地项目，规划年产23000吨光刻胶及配套树脂、电镀液、 高纯试剂等集成电路材料。项目建成后将联动昆山、南通及东南亚基地，搭建“国内+海外”全球化产能体系，抢抓高端材料市场需求，缩短交付周期，提升对长电科技、华天科技、通富微电等核心\n\n客户的响应能力；同时依托产业链闭环与先进制程配套深化业务协同，巩固高端封装光刻胶龙头地位，加快国产替代。基地同步布局光刻胶研发中心，实现产能与技术同步迭代，构建“技术突破- 产能落地-市场扩张”的正向循环，支撑公司长期增长。"
+    }
+  ],
+  "timings": [
+    {
+      "stage": "heuristic_router",
+      "seconds": 1.0467018000781536e-05
+    },
+    {
+      "stage": "rewrite_planning",
+      "seconds": 2.986347912985366
+    },
+    {
+      "stage": "retriever_init",
+      "seconds": 1.2110103853046894e-06
+    },
+    {
+      "stage": "retrieve_two_stage",
+      "seconds": 0.3594903460179921
+    },
+    {
+      "stage": "build_evidence_items",
+      "seconds": 1.5205005183815956e-05
+    },
+    {
+      "stage": "refusal_gate",
+      "seconds": 2.862012479454279e-06
+    },
+    {
+      "stage": "rag_generation",
+      "seconds": 6.746739886992145
+    },
+    {
+      "stage": "post_check",
+      "seconds": 1.0124000255018473e-05
+    }
+  ]
+}

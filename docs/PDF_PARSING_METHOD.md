@@ -1,6 +1,6 @@
 # 金融研报 PDF 解析方法
 
-本阶段目标是为后续 RAG 问答生成可追溯、可检阅、表格不被切断的解析结果。当前保留两个可直接运行的文件：`RAG/pdf_parser/deepdoc_parser.py` 调用 RAGFlow DeepDoc；`RAG/pdf_parser/legacy_parser.py` 是旧版启发式解析器。
+本阶段目标是为后续 RAG 问答生成可追溯、可检阅、表格不被切断的解析结果。当前保留两个可直接运行的文件：`preprocess/deepdoc_parser.py` 调用 RAGFlow DeepDoc；`preprocess/legacy_parser.py` 是旧版启发式解析器。
 
 ## 默认 DeepDoc 解析流程
 
@@ -13,13 +13,22 @@
 运行示例：
 
 ```bash
-ragflow/.venv/bin/python RAG/pdf_parser/deepdoc_parser.py RAG/data/it_service_pdfs --max-files 3
+cd RAG
+python preprocess/deepdoc_parser.py \
+  --input data/it_service_pdfs \
+  --output-dir output/deepdoc_parse \
+  --preserve-root data \
+  --max-files 3
 ```
 
 旧版解析器：
 
 ```bash
-python RAG/pdf_parser/legacy_parser.py RAG/data/it_service_pdfs --output-dir RAG/outputs/pdf_parse_legacy --max-files 3
+cd RAG
+python preprocess/legacy_parser.py \
+  --input data/it_service_pdfs \
+  --output-dir output/legacy_parse \
+  --max-files 3
 ```
 
 ## Legacy 解析流程
@@ -53,7 +62,7 @@ DeepDoc 的主链路是：PDF 渲染图片、OCR 检测文字框、PDF 字符层
 默认输出目录：
 
 ```text
-RAG/outputs/pdf_parse_deepdoc/
+output/deepdoc_parse/
 ```
 
 每份 PDF 会生成：
